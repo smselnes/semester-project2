@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 1rem;
+    border-radius: 10px;
+
+    & img {
+       border-bottom: 2px solid $colour__dark;
+       border-radius: 10px;
+    }
+    
+}

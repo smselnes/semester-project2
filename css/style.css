@@ -1,0 +1,102 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #F0F1F2;
+  margin: 0;
+  font-family: "Prompt";
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.card {
+  margin: 1rem;
+  border-radius: 10px;
+}
+
+.card img {
+  border-bottom: 2px solid #384968;
+  border-radius: 10px;
+}
+
+.navbar {
+  background-color: #384968;
+}
+
+@media (min-width: 925px) {
+  .logo img {
+    width: 300px;
+  }
+}
+
+.active {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Nova Mono";
+}
+
+.welcome {
+  text-align: center;
+}
+
+.welcome__button {
+  background-color: #384968;
+  color: #F0F1F2;
+  -webkit-box-shadow: 1px 1px 3px #384968;
+          box-shadow: 1px 1px 3px #384968;
+}
+
+.welcome__button:hover {
+  color: #384968;
+  background-color: #9ec79d;
+}
+
+.featured {
+  text-align: center;
+  background-color: #9ec79d;
+}
+
+.toggleFavourites {
+  color: black;
+}
+
+.emailError,
+.passwordError,
+.submitError {
+  display: none;
+}
+
+.warning {
+  background-color: yellow;
+  color: black;
+}
+
+.error {
+  color: red;
+  background-color: pink;
+}
+
+.warning {
+  color: green;
+  background-color: orange;
+}
+
+.success {
+  color: white;
+  background-color: green;
+}
+/*# sourceMappingURL=style.css.map */

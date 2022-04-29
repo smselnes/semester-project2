@@ -1,0 +1,19 @@
+.navbar {
+    background-color: $colour__dark;
+
+  
+   
+
+}
+
+.logo img {
+
+    @media (min-width:925px) {
+         width: 300px;
+    }
+   
+}
+
+.active {
+    text-decoration: underline;
+}
