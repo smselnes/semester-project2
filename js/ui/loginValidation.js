@@ -2,10 +2,10 @@ import { displayMessage } from "../components/displayMessage.js";
 import { saveToken, saveUser } from "../tools/storage.js";
 const newUrl = "http://localhost:1337";
 const emailInput = document.querySelector(".emailInput");
-const emailError = document.querySelector(".emailError");
+const emailError = document.querySelector(".email__error");
 const passwordInput = document.querySelector(".passwordInput");
-const passwordError = document.querySelector(".passwordError");
-const submitLogin = document.querySelector(".login__submit");
+const passwordError = document.querySelector(".password__error");
+const loginError = document.querySelector(".login__error");
 const form = document.querySelector(".login");
 
 form.addEventListener("submit", submitLoginForm);
@@ -16,21 +16,23 @@ function submitLoginForm() {
   const emailValue = emailInput.value.trim();
   const passwordValue = passwordInput.value.trim();
 
-  if (validateEmail(emailValue.value) === true) {
+  if (!emailValue) {
     emailError.style.display = "block";
-  } else {
+    emailError.innerHTML = "Please enter valid email";
+  } else if (emailValue) {
     emailError.style.display = "none";
   }
 
   if (passwordValue.length < 8) {
     passwordError.style.display = "block";
+    passwordError.innerHTML = "Password must be minimum 8 characters.";
   } else {
     passwordError.style.display = "none";
   }
 
-  /* if (emailValue.length === 0 || passwordValue.length === 0) {
-    return displayMessage("warning", "Invalid Input", ".submitError");
-  }  */
+  if (emailValue.length < 5 || passwordValue.length < 8) {
+    loginError.innerHTML = "Invalid input values";
+  }
 
   loginToAdmin(emailValue, passwordValue);
 
@@ -62,25 +64,11 @@ function submitLoginForm() {
       }
 
       if (json.error) {
-        //displayMessage("warning", "${json.data[0]}", ".submitError");
-        console.log("We can fix this error code later.");
+        console.log(json.error);
       }
     } catch (error) {
       console.log(error);
+      return displayMessage("warning", "an error occured", ".login__error");
     }
   }
-}
-
-function checkLength(value, len) {
-  if (value.trim().length > len) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-function validateEmail(emailValue) {
-  const regEx = /\S+@\S+\.\S+/;
-  const patternMatches = regEx.test(emailValue);
-  return patternMatches;
 }

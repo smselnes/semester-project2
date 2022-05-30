@@ -1,11 +1,13 @@
-@import "../scss/partials/variables";
-
-@import "../scss/partials/layout";
-@import "../scss/partials/productList";
-@import "../scss/partials/navigation";
-@import "../scss/partials/typography";
+@import "../scss/partials/common/variables";
+@import "../scss/partials/common/layout";
+@import "../scss/partials/products/productList";
+@import "../scss/partials/common/navigation";
+@import "../scss/partials/common/typography";
 @import "../scss/partials/homepage/banner";
-@import "../scss/partials/homepage/featured";
-@import "../scss/partials/details/productDetails";
+@import "../scss/partials/products/productDetails";
 @import "../scss/partials/login/loginValidation";
-@import "../scss/partials/systemMessages";
+@import "../scss/partials/common/systemMessages";
+@import "../scss/partials/admin/addProduct";
+@import "../scss/partials/cart/shoppingCart";
+@import "../scss/partials/homepage/featured";
+@import "../scss/partials/admin/editProducts";

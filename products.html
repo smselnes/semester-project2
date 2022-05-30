@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="No matter what the occasion is, we got the shoes you need in our large collection at Shoemania."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,10 +21,10 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/css/style.css" />
-    <title>Document</title>
+    <title>Shoemania - Collection</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-md">
+    <nav class="navbar navbar-expand-md navbar-dark">
       <div class="container-fluid">
         <a class="navbar-brand logo" href="index.html"
           ><img src="/images/shoemania-logo.jpg" alt="brand logo" width="100px"
@@ -36,12 +40,15 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-3 mb-3 mb-lg-0">
-            <li class="nav-item">
+        <div
+          class="collapse navbar-collapse justify-content-center text-center"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav mb-lg-0">
+            <li class="nav-item mx-3">
               <a class="nav-link text-light" href="index.html">Home</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item mx-3">
               <a
                 class="nav-link text-light active"
                 aria-current="page"
@@ -49,36 +56,44 @@
                 >Products</a
               >
             </li>
-            <li class="nav-item">
+            <li class="nav-item mx-3">
               <a class="nav-link text-light" href="cart.html">Cart</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item mx-3">
               <a class="nav-link text-light" href="login.html">Login</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a
+                class="nav-link text-light disabled admin__link"
+                href="admin.html"
+                >Admin</a
+              >
             </li>
           </ul>
         </div>
       </div>
     </nav>
     <main>
+      <div class="d-flex justify-content-center m-3">
+        <div class="spinner-grow loader" role="status"></div>
+      </div>
       <h1 class="text-center m-2">Collection</h1>
-      <div class="container-fluid col-sm-10 col-lg-6">
-        <form class="d-flex">
+      <div class="container-fluid mb-3">
+        <form class="d-flex mx-auto search__form">
           <input
-            class="form-control me-5 search__input"
+            class="form-control"
             type="search"
-            placeholder="Search"
+            placeholder="Filter products..."
             aria-label="Search"
           />
-          <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       </div>
-      <div class="row">
-        <div class="container col-lg-12"></div>
-      </div>
+      <div class="products__collection mx-auto"></div>
     </main>
 
-    <script src="/js/collection.js" type="module"></script>
+    <script src="/js/components/collection.js" type="module"></script>
     <script src="/js/ui/filterProducts.js" type="module"></script>
+    <script src="/js/components/loggedIn.js" type="module"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
